@@ -1,10 +1,47 @@
-# Prerequisites
+
+# Created by https://www.gitignore.io/api/c++,basic,atmelstudio
+# Edit at https://www.gitignore.io/?templates=c++,basic,atmelstudio
+
+### AtmelStudio ###
+## Ignore Atmel Studio temporary files and build results
+# https://www.microchip.com/mplab/avr-support/atmel-studio-7
+
+# Atmel Studio is powered by an older version of Visual Studio,
+# so most of the project and solution files are the same as VS files,
+# only prefixed by an `at`.
+
+#Build Directories
+[Dd]ebug/
+[Rr]elease/
+
+#Build Results
+*.o
 *.d
+*.eep
+*.elf
+*.hex
+*.map
+*.srec
+
+#User Specific Files
+*.atsuo
+
+### Basic ###
+# Apples Build
+*.build
+*.apples
+
+# Initialized files
+*.exe
+*.ini
+*.basic
+
+### C++ ###
+# Prerequisites
 
 # Compiled Object files
 *.slo
 *.lo
-*.o
 *.obj
 
 # Precompiled Headers
@@ -27,6 +64,7 @@
 *.lib
 
 # Executables
-*.exe
 *.out
 *.app
+
+# End of https://www.gitignore.io/api/c++,basic,atmelstudio
