@@ -7,6 +7,7 @@
 void Opdrachtw1b3(void);
 void Opdrachtw1b4(void);
 void Opdrachtw1b5(void);
+void Opdrachtw1b6(void);
 
 
 
@@ -38,7 +39,7 @@ notes:			Looping forever, flipping bits on PORTD
 Version :    	DMK, Initial code
 *******************************************************************/
 {
-	Opdrachtw1b4();
+	Opdrachtw1b6();
 	
 	return 1;
 }
@@ -91,6 +92,48 @@ void Opdrachtw1b4(void){
 void Opdrachtw1b5(void)
 {
 	DDRD = 0xFF; // heel D op schrijven
+	uint8_t ledArray[] = {0x81, 0x42, 0x24, 0x18};
+	uint8_t i =0;
+	while (1)
+	{
+		PORTD = ledArray[i];
+		i++;
+		wait(250);
+		if (i > 3)
+		{
+			i = 0;
+		}
+		
+	}
+			
+}
+
+void Opdrachtw1b6(void)
+{
+	DDRC = 0xFE;		//C op lezen
+	//PORTC = 0xFF;		// C0
+	
+	DDRD = 0xFF;		// D op schrijven
+	//PORTD = 0x01;		// D1
 	
 	
+	while(1)
+	{
+
+		if (PINC & 0x01)
+		{
+			PORTD = 0x80;
+			wait(250);
+			PORTD = 0x00;
+			wait(250);
+		}
+		else
+		{
+			PORTD = 0x80;
+			wait(1000);
+			PORTD = 0x00;
+			wait(1000);
+		}
+		wait(10);
+	}
 }
